@@ -1,0 +1,458 @@
+@media media-type and (media-feature-rule) {
+    /* Estilos CSS que se aplicarán si la condición se cumple */
+  }
+
+/* Variables CSS para colores */
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.service-card img {
+    max-width: 80%; /* Más pequeño para servicios */
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+
+.hero-with-bg .container {
+    background-color: rgba(155, 11, 11, 0.4); /* Fondo semitransparente para el texto (opcional) */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+:root {
+    --primary-color: #4CAF50; /* Verde vibrante */
+    --secondary-color: #FFC107; /* Amarillo cálido */
+    --text-color: #333;
+    --light-text-color: #f4f4f4;
+    --background-light: #f9f9f9;
+    --background-dark: #2c3e50; /* Azul oscuro para footer/header */
+    --accent-color: #FF7F50; /* Coral para destacar */
+}
+
+/* --- Estilos Generales y Reset --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en enlaces internos */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+ul {
+    list-style: none;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+}
+
+.section-padding {
+    padding: 60px 0;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 20px;
+    color: var(--background-dark);
+}
+
+h2, h3 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* --- Header --- */
+.header {
+    background-color: var(--background-dark);
+    color: var(--light-text-color);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: var(--light-text-color);
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-menu ul {
+    display: flex;
+}
+
+.nav-menu ul li {
+    margin-left: 30px;
+}
+
+.nav-menu ul li a {
+    color: var(--light-text-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none; /* Oculto por defecto en escritorio */
+    background: none;
+    border: none;
+    color: var(--light-text-color);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* --- Hero Section --- */
+.hero {
+    background: url('https://via.placeholder.com/1500x600/607D8B/FFFFFF?text=Fondo+Mascotas') no-repeat center center/cover;
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero::before { /* Overlay para mejorar legibilidad del texto */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Capa oscura */
+}
+
+.hero .container {
+    position: relative; /* Asegura que el contenido esté sobre el overlay */
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--light-text-color);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* --- Product Grid --- */
+.product-grid, .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas auto-ajustables */
+    gap: 30px;
+    text-align: center;
+}
+
+.product-card, .service-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover, .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.product-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.product-card .price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    display: block; /* Para que ocupe su propia línea */
+}
+
+.product-card .add-to-cart {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-card .add-to-cart:hover {
+    background-color: var(--accent-color);
+}
+
+/* --- Service Cards --- */
+.service-card img {
+    max-width: 80%; /* Más pequeño para servicios */
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.service-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* --- About Section --- */
+.about {
+    background-color: var(--background-dark);
+    color: var(--light-text-color);
+    text-align: center;
+}
+
+.about h3 {
+    color: var(--light-text-color);
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    font-size: 1.1rem;
+}
+
+/* --- Contact Section --- */
+.contact {
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+.contact-form button {
+    width: 100%; /* El botón ocupa todo el ancho del formulario */
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--background-dark);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9rem;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer p {
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    margin: 0 10px;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+    transform: scale(1.2);
+}
+
+
+/* --- Media Queries para Responsividad --- */
+
+/* Teléfonos (hasta 767px) - Mobile-First ya está en los estilos base */
+@media screen and (max-width: 767px) {
+    .header .container {
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+        justify-content: space-between; /* Alineación para el toggle y logo */
+    }
+
+    .logo {
+        margin-right: auto; /* Empuja el logo a la izquierda */
+    }
+
+    .nav-menu {
+        display: none; /* Oculta el menú por defecto en móvil */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: var(--background-dark);
+        padding-bottom: 10px;
+        order: 1; /* Para que aparezca debajo del logo y toggle */
+    }
+
+    .nav-menu.active {
+        display: flex; /* Muestra el menú cuando está activo */
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-menu ul li {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .nav-menu ul li a {
+        display: block; /* Para que el área de clic sea más grande */
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Separador */
+    }
+
+    .nav-menu ul li:last-child a {
+        border-bottom: none;
+    }
+
+    .menu-toggle {
+        display: block; /* Muestra el botón de menú en móviles */
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .product-grid, .service-grid {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+    }
+
+    .section-padding {
+        padding: 40px 0;
+    }
+
+    .footer .container {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .social-links {
+        margin-top: 10px;
+    }
+}
+
+/* Tabletas (768px a 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .header .container {
+        padding: 0 30px;
+    }
+
+    .nav-menu ul li {
+        margin-left: 20px;
+    }
+
+    .hero h2 {
+        font-size: 2.8rem;
+    }
+
+    .product-grid, .service-grid {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tabletas */
+    }
+}
+
+/* Escritorio (1024px y más) - Ya cubierto en estilos base */
+/* No se necesitan media queries específicas para escritorio si el mobile-first
+   se ha diseñado para escalar correctamente con los estilos predeterminados. */
